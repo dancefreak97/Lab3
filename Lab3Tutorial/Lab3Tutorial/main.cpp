@@ -4,8 +4,11 @@
 #include <QPushButton>
 #include <QWidget>
 
+#include "MyWidget.h"
+
 int main(int argc, char* argv[])
 {
+    /*
     QApplication app(argc, argv);
 
     //Family Values: part1
@@ -27,6 +30,12 @@ int main(int argc, char* argv[])
     //Family Values 2: part 3
     window.show();
 
+    return app.exec();
+    */
 
+    //Let There Be Widgets
+    QApplication app(argc, argv);
+    MyWidget widget;
+    widget.show();
     return app.exec();
 }
