@@ -35,9 +35,15 @@
     <ClCompile Include="MyWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LCDRange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LCDRange.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

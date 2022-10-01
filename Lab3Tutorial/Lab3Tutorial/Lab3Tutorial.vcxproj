@@ -85,12 +85,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LCDRange.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyWidget.cpp" />
     <QtRcc Include="qml.qrc" />
     <None Include="main.qml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LCDRange.h" />
     <ClInclude Include="MyWidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

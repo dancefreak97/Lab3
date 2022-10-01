@@ -1,4 +1,5 @@
 #include "MyWidget.h"
+#include "LCDRange.h"
 
 #include <QApplication>
 #include <QFont>
@@ -11,7 +12,7 @@
 //Let There Be Widgets
 MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
 {
-    setFixedSize(200, 200);
+    //setFixedSize(200, 200);
 
     //Hello World
     QPushButton* hello = new QPushButton(tr("Hello World"), this);
@@ -23,6 +24,7 @@ MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
 
     connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
 
+    /*
     //Building Blocks
     QLCDNumber* lcd = new QLCDNumber(2);
     lcd->setSegmentStyle(QLCDNumber::Filled);
@@ -33,11 +35,20 @@ MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
 
     connect(slider, SIGNAL(valueChanged(int)),
         lcd, SLOT(display(int)));
+    */
+
+    //Building Blocks Galore!
+    QGridLayout* grid = new QGridLayout;
+    for (int row = 0; row < 3; ++row) {
+        for (int column = 0; column < 3; ++column) {
+            LCDRange* lcdRange = new LCDRange;
+            grid->addWidget(lcdRange, row, column);
+        }
+    }
 
     QVBoxLayout* layout = new QVBoxLayout;
     layout->addWidget(hello);
     layout->addWidget(quit);
-    layout->addWidget(lcd);
-    layout->addWidget(slider);
+    layout->addLayout(grid);
     setLayout(layout);
 }
