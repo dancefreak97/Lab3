@@ -38,6 +38,9 @@
     <ClCompile Include="LCDRange.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cannonfield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyWidget.h">
@@ -46,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="LCDRange.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Cannonfield.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

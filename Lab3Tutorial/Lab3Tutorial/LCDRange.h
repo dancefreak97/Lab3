@@ -20,6 +20,8 @@ class LCDRange : public QWidget
         LCDRange(QWidget* parent = 0);
     public slots:
         void setValue(int value);
+        //Preparing for Battle
+        void setRange(int minValue, int maxValue);
     signals:
         void valueChanges(int newValue);
 

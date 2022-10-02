@@ -1,5 +1,6 @@
 #include "MyWidget.h"
 #include "LCDRange.h"
+#include "Cannonfield.h"
 
 #include <QApplication>
 #include <QFont>
@@ -15,7 +16,7 @@ MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
     //setFixedSize(200, 200);
 
     //Hello World
-    QPushButton* hello = new QPushButton(tr("Hello World"), this);
+    //QPushButton* hello = new QPushButton(tr("Hello World"), this);
 
     //Calling it Quits
     QPushButton* quit = new QPushButton(tr("Quit"), this);
@@ -24,19 +25,28 @@ MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
 
     connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
 
+    //Preparing for Battlefield
+    LCDRange* angle = new LCDRange;
+    angle->setRange(5, 70);
+
+    CannonField* cannonField = new CannonField;
+
+    connect(angle, SIGNAL(valueChanged(int)),
+        cannonField, SLOT(setAngle(int)));
+    connect(cannonField, SIGNAL(angleChanged(int)),
+        angle, SLOT(setValue(int)));
+
+    QGridLayout* gridLayout = new QGridLayout;
+    gridLayout->addWidget(quit, 0, 0);
+    gridLayout->addWidget(angle, 1, 0);
+    gridLayout->addWidget(cannonField, 1, 1, 2, 1);
+    gridLayout->setColumnStretch(1, 10);
+    setLayout(gridLayout);
+
+    angle->setValue(60);
+    angle->setFocus();
+
     /*
-    //Building Blocks
-    QLCDNumber* lcd = new QLCDNumber(2);
-    lcd->setSegmentStyle(QLCDNumber::Filled);
-
-    QSlider* slider = new QSlider(Qt::Horizontal);
-    slider->setRange(0, 99);
-    slider->setValue(0);
-
-    connect(slider, SIGNAL(valueChanged(int)),
-        lcd, SLOT(display(int)));
-    */
-
     //One Thing Leads To Another
     QGridLayout* grid = new QGridLayout;
     LCDRange* previousRange = 0;
@@ -57,4 +67,5 @@ MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
     layout->addWidget(quit);
     layout->addLayout(grid);
     setLayout(layout);
+    */
 }

@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cannonfield.cpp" />
     <ClCompile Include="LCDRange.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyWidget.cpp" />
@@ -93,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="LCDRange.h" />
+    <QtMoc Include="Cannonfield.h" />
     <ClInclude Include="MyWidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
