@@ -92,7 +92,7 @@
     <None Include="main.qml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LCDRange.h" />
+    <QtMoc Include="LCDRange.h" />
     <ClInclude Include="MyWidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

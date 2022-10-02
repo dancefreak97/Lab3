@@ -43,8 +43,10 @@
     <ClInclude Include="MyWidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LCDRange.h">
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="LCDRange.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
   </ItemGroup>
 </Project>

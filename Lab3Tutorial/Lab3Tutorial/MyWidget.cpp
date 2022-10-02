@@ -37,12 +37,18 @@ MyWidget::MyWidget(QWidget* parent) : QWidget(parent)
         lcd, SLOT(display(int)));
     */
 
-    //Building Blocks Galore!
+    //One Thing Leads To Another
     QGridLayout* grid = new QGridLayout;
+    LCDRange* previousRange = 0;
+
     for (int row = 0; row < 3; ++row) {
         for (int column = 0; column < 3; ++column) {
             LCDRange* lcdRange = new LCDRange;
             grid->addWidget(lcdRange, row, column);
+            if (previousRange)
+                connect(lcdRange, SIGNAL(valueChanged(int)),
+                    previousRange, SLOT(setValue(int)));
+            previousRange = lcdRange;
         }
     }
 
